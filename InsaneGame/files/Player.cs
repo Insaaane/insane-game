@@ -6,48 +6,62 @@ namespace InsaneGame.files
 {
     public class Player : Entity
     {
-        public Vector2 velocity;
-        public float playerSpeed = 5f;
-        public Animation[] playerAmination;
-        public currentAnimation playerAnimationController;
+        public Vector2 Velocity;
+        public Rectangle PlayerFallRect;
+
+        public float PlayerSpeed = 5f;
+        public float Gravity = 3f;
+        public bool IsFalling = true;
+
+        public Animation[] PlayerAmination;
+        public CurrentAnimation PlayerAnimationController;
 
         public Player(Texture2D idleSprite, Texture2D runSprite)
         {
-            playerAmination = new Animation[2];
-            velocity = Vector2.Zero; //new Vector2()
-            playerAmination[0] = new Animation(idleSprite);
-            playerAmination[1] = new Animation(runSprite);
+            PlayerAmination = new Animation[2];
+
+            Position = new Vector2();
+            Velocity = new Vector2(); //new Vector2()
+
+            PlayerAmination[0] = new Animation(idleSprite);
+            PlayerAmination[1] = new Animation(runSprite);
+            Hitbox = new Rectangle((int)Position.X, (int)Position.Y, 32, 32);
         }
 
         public override void Update()
         {
             KeyboardState keyboard = Keyboard.GetState();
 
-            playerAnimationController = currentAnimation.Idle;
+            PlayerAnimationController = CurrentAnimation.Idle;
+
+            if (IsFalling)
+                Velocity.Y += Gravity;
 
             if (keyboard.IsKeyDown(Keys.A))
             {
-                velocity.X -= playerSpeed;
-                playerAnimationController = currentAnimation.Run;
+                Velocity.X -= PlayerSpeed;
+                PlayerAnimationController = CurrentAnimation.Run;
             }
             if (keyboard.IsKeyDown(Keys.D))
             {
-                velocity.X += playerSpeed;
-                playerAnimationController = currentAnimation.Run;
+                Velocity.X += PlayerSpeed;
+                PlayerAnimationController = CurrentAnimation.Run;
             }
 
-            position = velocity;
+            Position = Velocity;
+            Hitbox.X = (int)Position.X;
+            Hitbox.Y = (int)Position.Y;
         }
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            switch (playerAnimationController)
+            switch (PlayerAnimationController)
             {
-                case currentAnimation.Idle:
-                    playerAmination[0].Draw(spriteBatch, position, gameTime, 500);
+                case CurrentAnimation.Idle:
+                    PlayerAmination[0].Draw(spriteBatch, Position, gameTime, 500);
                     break;
-                case currentAnimation.Run:
-                    playerAmination[1].Draw(spriteBatch, position, gameTime, 100);
+                case CurrentAnimation.Run:
+                    PlayerAmination[1].Draw(spriteBatch, Position, gameTime, 100);
                     break;
             }    
 

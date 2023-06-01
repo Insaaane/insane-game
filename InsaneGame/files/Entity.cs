@@ -10,15 +10,15 @@ namespace InsaneGame.files
 {
     public abstract class Entity
     {
-        public Texture2D spritesheet;
+        public Texture2D Spritesheet;
+        public Vector2 Position;
+        public Rectangle Hitbox;
 
-        public enum currentAnimation
+        public enum CurrentAnimation
         {
             Idle,
             Run
         }
-
-        public Vector2 position;
 
         public abstract void Update();
 

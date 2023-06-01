@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 using TiledSharp;
 
 namespace InsaneGame.files
@@ -14,6 +15,9 @@ namespace InsaneGame.files
         private TmxMap map;
         private TilemapManager tilemapManager;
         private Texture2D tileset;
+        private List<Rectangle> collisionRects;
+        private Rectangle startRect;
+        private Rectangle endRect;
         #endregion
 
         #region Player
@@ -53,6 +57,16 @@ namespace InsaneGame.files
             tilemapManager = new TilemapManager(map, tileset, tilesetTileWidth, tileWidth, tileHeight);
             #endregion
 
+            collisionRects = new List<Rectangle>();
+
+            foreach (var obj in map.ObjectGroups["Collisions"].Objects)
+            {
+                if (obj.Name == "")
+                {
+                    collisionRects.Add(new Rectangle((int)obj.X, (int)obj.Y, (int)obj.Width, (int)obj.Height));
+                }
+            }
+
             #region Player
             player = new Player(
                 Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Idle (32 x 32)"),
@@ -62,12 +76,23 @@ namespace InsaneGame.files
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
-
+            #region Player Collisions
+            var initPos = player.Position;
             player.Update();
+            //y axis 
+            foreach (var rect in collisionRects)
+            {
+                player.IsFalling = true;
+                if (rect.Intersects(player.PlayerFallRect))
+                {
+                    player.IsFalling = false;
+                    break;
+                }
+            }
+            #endregion
 
             base.Update(gameTime);
         }

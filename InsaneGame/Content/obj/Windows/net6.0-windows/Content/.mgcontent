@@ -4,10 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Cave Tileset/_Complete_static_BG_(288 x 208).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Cave Tileset/Brown_Tile_Terrain (16 x 16).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Cave Tileset/Gray_Tile_Terrain (16 x 16).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png</File>
+    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Cave Tileset/m_merged.png</File>
     <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/1 - Agent_Mike_Bullet (16 x 16).png</File>
     <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/1 - Agent_Mike_Hurt (32 x 32).png</File>
     <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/1 - Agent_Mike_Idle (32 x 32).png</File>
@@ -39,9 +36,6 @@
     <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/9 - Mr._Circuit_Running (32 x 32).png</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

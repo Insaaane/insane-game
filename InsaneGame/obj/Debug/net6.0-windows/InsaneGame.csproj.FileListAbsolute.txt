@@ -64,9 +64,6 @@ C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite P
 C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\9 - Mr._Circuit_Hurt (32 x 32).xnb
 C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\9 - Mr._Circuit_Idle (32 x 32).xnb
 C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\9 - Mr._Circuit_Running (32 x 32).xnb
-C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Cave Tileset\Brown_Tile_Terrain (16 x 16).xnb
-C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Cave Tileset\Gray_Tile_Terrain (16 x 16).xnb
-C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Cave Tileset\Scaffolding_and_BG_Parts (16 x 16).xnb
-C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Cave Tileset\_Complete_static_BG_(288 x 208).xnb
 C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Level1.tmx
 C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\TiledSharp.dll
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Cave Tileset\m_merged.xnb
