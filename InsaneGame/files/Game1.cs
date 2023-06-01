@@ -33,7 +33,6 @@ namespace InsaneGame.files
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
             _graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
             _graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
             _graphics.IsFullScreen = true;
@@ -79,19 +78,33 @@ namespace InsaneGame.files
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            #region Player Collisions
+
             var initPos = player.Position;
             player.Update();
+            #region Player Collisions
             //y axis 
             foreach (var rect in collisionRects)
             {
-                player.IsFalling = true;
+                //player.IsFalling = true;
                 if (rect.Intersects(player.PlayerFallRect))
                 {
-                    player.IsFalling = false;
+                    //player.IsFalling = false;
+                    player.Position.Y = initPos.Y;
+                    player.Velocity.Y = initPos.Y;
+                    break;
+                }   
+            }
+
+            //x axis
+            foreach (var rect in collisionRects)
+            {
+                if (rect.Intersects(player.Hitbox))
+                {
+                    player.Position.X = initPos.X;
+                    player.Velocity.X = initPos.X;
                     break;
                 }
-            }
+            }  
             #endregion
 
             base.Update(gameTime);

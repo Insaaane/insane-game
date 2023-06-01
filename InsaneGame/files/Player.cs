@@ -10,8 +10,12 @@ namespace InsaneGame.files
         public Rectangle PlayerFallRect;
 
         public float PlayerSpeed = 5f;
-        public float Gravity = 3f;
+        public float Gravity = 5f;
+        public float JumpSpeed = -14f;
+        public float startY;
+
         public bool IsFalling = true;
+        public bool IsJumping;
 
         public Animation[] PlayerAmination;
         public CurrentAnimation PlayerAnimationController;
@@ -21,11 +25,12 @@ namespace InsaneGame.files
             PlayerAmination = new Animation[2];
 
             Position = new Vector2();
-            Velocity = new Vector2(); //new Vector2()
+            Velocity = new Vector2();
 
             PlayerAmination[0] = new Animation(idleSprite);
             PlayerAmination[1] = new Animation(runSprite);
-            Hitbox = new Rectangle((int)Position.X, (int)Position.Y, 32, 32);
+            Hitbox = new Rectangle((int)Position.X, (int)Position.Y, 25, 25);
+            PlayerFallRect = new Rectangle((int)Position.X, (int)Position.Y, 25, 25);
         }
 
         public override void Update()
@@ -34,9 +39,24 @@ namespace InsaneGame.files
 
             PlayerAnimationController = CurrentAnimation.Idle;
 
-            if (IsFalling)
-                Velocity.Y += Gravity;
+            Position = Velocity;
+            
+            Move(keyboard);
+            //if (IsFalling)
+            Velocity.Y += Gravity;
 
+            startY = Position.Y;
+            Jump(keyboard);
+
+            Hitbox.X = (int)Position.X;
+            Hitbox.Y = (int)Position.Y;
+            PlayerFallRect.X = (int)Position.X;
+            PlayerFallRect.Y = (int)Velocity.Y;
+        }
+
+
+        private void Move(KeyboardState keyboard)
+        {
             if (keyboard.IsKeyDown(Keys.A))
             {
                 Velocity.X -= PlayerSpeed;
@@ -47,10 +67,29 @@ namespace InsaneGame.files
                 Velocity.X += PlayerSpeed;
                 PlayerAnimationController = CurrentAnimation.Run;
             }
+        }
 
-            Position = Velocity;
-            Hitbox.X = (int)Position.X;
-            Hitbox.Y = (int)Position.Y;
+        private void Jump(KeyboardState keyboard)
+        {
+            if (IsJumping)
+            {
+                Position.Y += JumpSpeed;
+                JumpSpeed += 1;
+                if (Position.Y >= startY) 
+                {
+                    Position.Y = startY;
+                    IsJumping = false;
+                }
+                else
+                {
+                    if (keyboard.IsKeyDown(Keys.Space) || keyboard.IsKeyDown(Keys.W))
+                    {
+                        IsJumping = true;
+                        JumpSpeed = -14f;
+                        Position.Y += JumpSpeed;
+                    }
+                }
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
@@ -64,8 +103,6 @@ namespace InsaneGame.files
                     PlayerAmination[1].Draw(spriteBatch, Position, gameTime, 100);
                     break;
             }    
-
-            //spriteBatch.Draw(spritesheet, position, Color.White);
         }
     }
 }
