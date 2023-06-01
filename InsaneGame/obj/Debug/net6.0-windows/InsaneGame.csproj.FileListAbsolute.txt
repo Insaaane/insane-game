@@ -35,3 +35,38 @@ C:\Users\daybo\Desktop\Game\InsaneGame\obj\Debug\net6.0-windows\refint\InsaneGam
 C:\Users\daybo\Desktop\Game\InsaneGame\obj\Debug\net6.0-windows\InsaneGame.pdb
 C:\Users\daybo\Desktop\Game\InsaneGame\obj\Debug\net6.0-windows\InsaneGame.genruntimeconfig.cache
 C:\Users\daybo\Desktop\Game\InsaneGame\obj\Debug\net6.0-windows\ref\InsaneGame.dll
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\1 - Agent_Mike_Bullet (16 x 16).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\1 - Agent_Mike_Hurt (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\1 - Agent_Mike_Idle (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\1 - Agent_Mike_Jump_&_Falling (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\1 - Agent_Mike_Running (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\10 - Blankey_Floating (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\10 - Blankey_Hurt (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\2 - Martian_Red_Hurt (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\2 - Martian_Red_Idle (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\2 - Martian_Red_Running (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\3 - Hermie_Crawling (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\3 - Hermie_Hiding_&_Peek (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\3 - Hermie_Idle (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\4 - Ballooney_Flying (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\5 - Robot_Walky_Hurt (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\5 - Robot_Walky_Idle (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\5 - Robot_Walky_Movement (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\6 - Jumpy_Lumpy_Hurt (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\6 - Jumpy_Lumpy_Idle (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\6 - Jumpy_Lumpy_Leaping_&_Falling (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\7 - Orchid_Owl_Flying (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\7 - Orchid_Owl_Hurt (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\7 - Orchid_Owl_Idle (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\8 - Roach_Hurt (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\8 - Roach_Idle (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\8 - Roach_Running (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\9 - Mr._Circuit_Hurt (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\9 - Mr._Circuit_Idle (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Sprite Pack 4\9 - Mr._Circuit_Running (32 x 32).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Cave Tileset\Brown_Tile_Terrain (16 x 16).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Cave Tileset\Gray_Tile_Terrain (16 x 16).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Cave Tileset\Scaffolding_and_BG_Parts (16 x 16).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Cave Tileset\_Complete_static_BG_(288 x 208).xnb
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\Level1.tmx
+C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\TiledSharp.dll

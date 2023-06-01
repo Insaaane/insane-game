@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MlXTuy1pZQgZucSIKDeFevLnaIiKRnvKr4wX8uu01Pnpe+uW1G3y9kNo3kf1vhU3/n7baO2U2zU1OvlIyOYfUg==",
+  "dgSpecHash": "9wHw1QZy8poaYDxnxIpZP6tYWBnTa9oVEOzCyRITUt7aQsQxRlKteRZWOb7sXGQ4zAb+lejIS931EEiigiXD9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\daybo\\Desktop\\Game\\InsaneGame\\InsaneGame.csproj",
   "expectedPackageFiles": [
@@ -124,7 +124,8 @@
     "C:\\Users\\daybo\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\daybo\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
     "C:\\Users\\daybo\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
-    "C:\\Users\\daybo\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512"
+    "C:\\Users\\daybo\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
+    "C:\\Users\\daybo\\.nuget\\packages\\tiledsharp\\1.0.1\\tiledsharp.1.0.1.nupkg.sha512"
   ],
   "logs": []
 }
