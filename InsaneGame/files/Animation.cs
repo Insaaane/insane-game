@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing.Drawing2D;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -13,19 +12,19 @@ namespace InsaneGame.files
         int c = 0;
         float timeSinceLastFrame = 0;
 
-        public Animation(Texture2D spritesheet, float width = 32, float height = 32) 
+        public Animation(Texture2D spritesheet, float width = 96, float height = 96) 
         { 
             this.spritesheet = spritesheet;
             frames = (int)(spritesheet.Width / width);
             Console.WriteLine(frames);
         }  
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 position, GameTime gameTime, float millisecondsPerFrames = 100)
+        public void Draw(SpriteBatch spriteBatch, Vector2 position, GameTime gameTime, float millisecondsPerFrames = 150, SpriteEffects effect = SpriteEffects.None, int a = 96)
         {
             if (c < frames)
             {
-                var rect = new Rectangle(32 * c, rows, 32, 32);
-                spriteBatch.Draw(spritesheet, position, rect, Color.White);
+                var rect = new Rectangle(a * c, rows, a, a);
+                spriteBatch.Draw(spritesheet, position, rect, Color.White, 0f, new Vector2(), 1f, effect, 1);
                 timeSinceLastFrame += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
                 if (timeSinceLastFrame > millisecondsPerFrames)

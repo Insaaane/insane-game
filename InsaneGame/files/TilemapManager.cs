@@ -35,12 +35,12 @@ namespace InsaneGame.files
                     }
                     else
                     {
-                        int tileFrame = gid - 1;
-                        int column = tileFrame % tilesetTilesWide;
-                        int row = (int)Math.Floor((double)tileFrame / (double)tilesetTilesWide);
-                        float x = (j % map.Width) * map.TileWidth;
-                        float y = (float)Math.Floor(j / (double)map.Width) * map.TileHeight;
-                        Rectangle tilesetRec = new Rectangle(tileWidth * column, tileHeight * row, tileWidth, tileHeight);
+                        var tileFrame = gid - 1;
+                        var column = tileFrame % tilesetTilesWide;
+                        var row = (int)Math.Floor((double)tileFrame / (double)tilesetTilesWide);
+                        var x = (j % map.Width) * map.TileWidth;
+                        var y = (float)Math.Floor(j / (double)map.Width) * map.TileHeight;
+                        var tilesetRec = new Rectangle(tileWidth * column, tileHeight * row, tileWidth, tileHeight);
                         spriteBatch.Draw(tileset, new Rectangle((int)x, (int)y, tileWidth, tileHeight), tilesetRec, Color.White);
                     }
                 }

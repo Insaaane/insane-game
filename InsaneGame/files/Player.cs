@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -8,45 +9,51 @@ namespace InsaneGame.files
     {
         public Vector2 Velocity;
         public Rectangle PlayerFallRect;
+        public SpriteEffects Effects;
 
-        public float PlayerSpeed = 5f;
-        public float Gravity = 5f;
-        public float JumpSpeed = -14f;
-        public float startY;
+        public float PlayerSpeed = 4f;
+        public float Gravity = 7f;
+        public float JumpSpeed = -23f;
+        public float StartY;
 
-        public bool IsFalling = true;
         public bool IsJumping;
+        public bool IsShoting;
 
         public Animation[] PlayerAmination;
         public CurrentAnimation PlayerAnimationController;
 
-        public Player(Texture2D idleSprite, Texture2D runSprite)
+        public Player(Vector2 position, Texture2D idleSprite, Texture2D runSprite, Texture2D jumpSprite)
         {
-            PlayerAmination = new Animation[2];
+            PlayerAmination = new Animation[3];
 
-            Position = new Vector2();
+            Position = position;
             Velocity = new Vector2();
+            Effects = SpriteEffects.None;
 
             PlayerAmination[0] = new Animation(idleSprite);
             PlayerAmination[1] = new Animation(runSprite);
-            Hitbox = new Rectangle((int)Position.X, (int)Position.Y, 25, 25);
-            PlayerFallRect = new Rectangle((int)Position.X, (int)Position.Y, 25, 25);
+            PlayerAmination[2] = new Animation(jumpSprite);
+
+            Hitbox = new Rectangle((int)Position.X, (int)Position.Y, 96, 85);
+            PlayerFallRect = new Rectangle((int)Position.X, (int)Position.Y, 96, 85);
         }
 
         public override void Update()
         {
-            KeyboardState keyboard = Keyboard.GetState();
+            var keyboard = Keyboard.GetState();
 
             PlayerAnimationController = CurrentAnimation.Idle;
 
             Position = Velocity;
-            
-            Move(keyboard);
-            //if (IsFalling)
-            Velocity.Y += Gravity;
 
-            startY = Position.Y;
+            IsShoting = keyboard.IsKeyDown(Keys.Enter);
+
+            StartY = Position.Y;
+
+            Move(keyboard);
             Jump(keyboard);
+
+            Velocity.Y += Gravity;
 
             Hitbox.X = (int)Position.X;
             Hitbox.Y = (int)Position.Y;
@@ -61,11 +68,13 @@ namespace InsaneGame.files
             {
                 Velocity.X -= PlayerSpeed;
                 PlayerAnimationController = CurrentAnimation.Run;
+                Effects = SpriteEffects.FlipHorizontally;
             }
             if (keyboard.IsKeyDown(Keys.D))
             {
                 Velocity.X += PlayerSpeed;
                 PlayerAnimationController = CurrentAnimation.Run;
+                Effects = SpriteEffects.None;
             }
         }
 
@@ -73,21 +82,23 @@ namespace InsaneGame.files
         {
             if (IsJumping)
             {
-                Position.Y += JumpSpeed;
-                JumpSpeed += 1;
-                if (Position.Y >= startY) 
+                Velocity.Y += JumpSpeed;
+                JumpSpeed += 0.8f;
+                //Move(keyboard);
+                PlayerAnimationController = CurrentAnimation.Jump;
+
+                if (Velocity.Y >= StartY)
                 {
-                    Position.Y = startY;
+                    Velocity.Y = StartY;
                     IsJumping = false;
                 }
-                else
+            }
+            else
+            {
+                if ((keyboard.IsKeyDown(Keys.Space) || keyboard.IsKeyDown(Keys.W)) && !IsJumping)
                 {
-                    if (keyboard.IsKeyDown(Keys.Space) || keyboard.IsKeyDown(Keys.W))
-                    {
-                        IsJumping = true;
-                        JumpSpeed = -14f;
-                        Position.Y += JumpSpeed;
-                    }
+                    IsJumping = true;
+                    JumpSpeed = -23f;
                 }
             }
         }
@@ -97,10 +108,13 @@ namespace InsaneGame.files
             switch (PlayerAnimationController)
             {
                 case CurrentAnimation.Idle:
-                    PlayerAmination[0].Draw(spriteBatch, Position, gameTime, 500);
+                    PlayerAmination[0].Draw(spriteBatch, Position, gameTime, 150, Effects);
                     break;
                 case CurrentAnimation.Run:
-                    PlayerAmination[1].Draw(spriteBatch, Position, gameTime, 100);
+                    PlayerAmination[1].Draw(spriteBatch, Position, gameTime, 80, Effects);
+                    break;
+                case CurrentAnimation.Jump:
+                    PlayerAmination[2].Draw(spriteBatch, Position, gameTime, 100, Effects);
                     break;
             }    
         }

@@ -17,7 +17,8 @@ namespace InsaneGame.files
         public enum CurrentAnimation
         {
             Idle,
-            Run
+            Run,
+            Jump
         }
 
         public abstract void Update();

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.MediaFoundation;
 using System.Collections.Generic;
 using TiledSharp;
 
@@ -10,6 +11,8 @@ namespace InsaneGame.files
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        public static float screenWidth;
+        public static float screenHeight;
 
         #region Tilemap
         private TmxMap map;
@@ -22,6 +25,19 @@ namespace InsaneGame.files
 
         #region Player
         private Player player;
+        private List<FireBall> fireballs;
+        private Texture2D fireballTexture;
+        #endregion
+
+        #region Emeny
+        private Enemy MainEnemy;
+        private List<Enemy> enemyList;
+        private List<Rectangle> enemyPathway;
+        #endregion
+
+        #region Camera
+        private Camera camera;
+        private Matrix transformMatrix;
         #endregion
 
         public Game1()
@@ -36,6 +52,8 @@ namespace InsaneGame.files
             _graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
             _graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
             _graphics.IsFullScreen = true;
+            screenHeight = _graphics.PreferredBackBufferHeight;
+            screenWidth = _graphics.PreferredBackBufferWidth;
 
             _graphics.ApplyChanges();
 
@@ -47,15 +65,16 @@ namespace InsaneGame.files
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             #region Tilemap
-            map = new TmxMap("Content\\Level1.tmx");
-            tileset = Content.Load<Texture2D>("Cave Tileset\\" + map.Tilesets[0].Name.ToString());
-            int tileWidth = map.Tilesets[0].TileWidth;
-            int tileHeight = map.Tilesets[0].TileHeight;
-            int tilesetTileWidth = tileset.Width / tileWidth;
+            map = new TmxMap("Content\\Level.tmx");
+            tileset = Content.Load<Texture2D>("Texture\\" + map.Tilesets[0].Name.ToString());
+            var tileWidth = map.Tilesets[0].TileWidth;
+            var tileHeight = map.Tilesets[0].TileHeight;
+            var tilesetTileWidth = tileset.Width / tileWidth;
 
             tilemapManager = new TilemapManager(map, tileset, tilesetTileWidth, tileWidth, tileHeight);
-            #endregion
-
+            #endregion 
+             
+            #region Collision
             collisionRects = new List<Rectangle>();
 
             foreach (var obj in map.ObjectGroups["Collisions"].Objects)
@@ -64,12 +83,51 @@ namespace InsaneGame.files
                 {
                     collisionRects.Add(new Rectangle((int)obj.X, (int)obj.Y, (int)obj.Width, (int)obj.Height));
                 }
+                else if (obj.Name == "start")
+                {
+                    startRect = new Rectangle((int)obj.X, (int)obj.Y, (int)obj.Width, (int)obj.Height);
+                }
+                else if (obj.Name == "end")
+                {
+                    endRect = new Rectangle((int)obj.X, (int)obj.Y, (int)obj.Width, (int)obj.Height);
+                }
             }
+            #endregion
 
             #region Player
             player = new Player(
-                Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Idle (32 x 32)"),
-                Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Running (32 x 32)"));
+                new Vector2(startRect.X, startRect.Y),
+                Content.Load<Texture2D>("PlayerSprites\\idle"),
+                Content.Load<Texture2D>("PlayerSprites\\run"),
+                Content.Load<Texture2D>("PlayerSprites\\jump"));
+            #endregion
+
+            #region Fireball
+            fireballs = new List<FireBall>();
+            fireballTexture = Content.Load<Texture2D>("FireBall\\fireBall");
+            #endregion
+
+            #region Enemy
+
+            enemyPathway = new List<Rectangle>();
+            foreach (var obj in map.ObjectGroups["EnemyPathways"].Objects)
+            {
+                enemyPathway.Add(new Rectangle((int)obj.X, (int)obj.Y, (int)obj.Width, (int)obj.Height));
+            }
+            enemyList = new List<Enemy>();
+
+
+            for (var i  = 0; i < enemyPathway.Count; i++)
+            {
+                MainEnemy = new Enemy(
+                Content.Load<Texture2D>("EnemySprites\\enemy_run"),
+                enemyPathway[i]);
+                enemyList.Add(MainEnemy);
+            }
+            #endregion
+
+            #region Camera 
+            camera = new Camera();
             #endregion
         }
 
@@ -78,19 +136,48 @@ namespace InsaneGame.files
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            #region Enemies
+            foreach(var enemy in enemyList)
+            {
+                enemy.Update();
+            }
+            #endregion
 
+            #region Camera update
+            transformMatrix = camera.Follow(player.Hitbox);
+            #endregion
+
+            #region Player
+
+            #region FireballTexture
+            
+            if (player.IsShoting)
+            {
+                if (player.Effects == SpriteEffects.None)
+                {
+                    var temp_hitbox = new Rectangle((int)player.Position.X, (int)player.Position.Y, fireballTexture.Width, fireballTexture.Height);
+                    fireballs.Add(new FireBall(fireballTexture, 4, temp_hitbox));
+                }
+            }
+
+            foreach (var fireball in fireballs.ToArray())
+            {
+
+            }
+
+            #endregion
+
+            #region Player Collisions
             var initPos = player.Position;
             player.Update();
-            #region Player Collisions
             //y axis 
             foreach (var rect in collisionRects)
             {
-                //player.IsFalling = true;
                 if (rect.Intersects(player.PlayerFallRect))
                 {
-                    //player.IsFalling = false;
+                    player.IsJumping = false;
                     player.Position.Y = initPos.Y;
-                    player.Velocity.Y = initPos.Y;
+                    player.Velocity.Y = initPos.Y; 
                     break;
                 }   
             }
@@ -100,11 +187,13 @@ namespace InsaneGame.files
             {
                 if (rect.Intersects(player.Hitbox))
                 {
-                    player.Position.X = initPos.X;
-                    player.Velocity.X = initPos.X;
+                    player.Position = initPos;
+                    player.Velocity = initPos;
                     break;
                 }
-            }  
+            }
+            #endregion
+
             #endregion
 
             base.Update(gameTime);
@@ -112,12 +201,32 @@ namespace InsaneGame.files
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.LightBlue);
 
+            //_spriteBatch.Begin(transformMatrix: transformMatrix);
             _spriteBatch.Begin();
 
             tilemapManager.Draw(_spriteBatch);
+            #region Enemies
+            foreach (var enemy in enemyList)
+            {
+                enemy.Draw(_spriteBatch, gameTime);
+            }
+            #endregion
+
+            #region Player
             player.Draw(_spriteBatch, gameTime);
+
+            #region Bullet
+
+            foreach (var fireball in fireballs.ToArray())
+            {
+                fireball.Draw(_spriteBatch);
+            }
+
+            #endregion
+
+            #endregion
             _spriteBatch.End();
 
             base.Draw(gameTime);

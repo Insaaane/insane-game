@@ -4,62 +4,14 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Cave Tileset/m_merged.png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/1 - Agent_Mike_Bullet (16 x 16).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/1 - Agent_Mike_Hurt (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/1 - Agent_Mike_Idle (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/1 - Agent_Mike_Jump_&amp;_Falling (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/1 - Agent_Mike_Running (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/10 - Blankey_Floating (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/10 - Blankey_Hurt (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/2 - Martian_Red_Hurt (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/2 - Martian_Red_Idle (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/2 - Martian_Red_Running (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/3 - Hermie_Crawling (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/3 - Hermie_Hiding_&amp;_Peek (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/3 - Hermie_Idle (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/4 - Ballooney_Flying (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/5 - Robot_Walky_Hurt (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/5 - Robot_Walky_Idle (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/5 - Robot_Walky_Movement (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/6 - Jumpy_Lumpy_Hurt (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/6 - Jumpy_Lumpy_Idle (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/6 - Jumpy_Lumpy_Leaping_&amp;_Falling (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/7 - Orchid_Owl_Flying (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/7 - Orchid_Owl_Hurt (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/7 - Orchid_Owl_Idle (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/8 - Roach_Hurt (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/8 - Roach_Idle (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/8 - Roach_Running (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/9 - Mr._Circuit_Hurt (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/9 - Mr._Circuit_Idle (32 x 32).png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Sprite Pack 4/9 - Mr._Circuit_Running (32 x 32).png</File>
+    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/EnemySprites/enemy_run.png</File>
+    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/FireBall/fireBall.png</File>
+    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/idle.png</File>
+    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/jump.png</File>
+    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/run.png</File>
+    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Texture/mapSprites.png</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
