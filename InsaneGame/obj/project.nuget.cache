@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9wHw1QZy8poaYDxnxIpZP6tYWBnTa9oVEOzCyRITUt7aQsQxRlKteRZWOb7sXGQ4zAb+lejIS931EEiigiXD9w==",
+  "dgSpecHash": "J0dNFhrBkxcI31ZGn29fGTZUGAE9s9ftr62wQ63EFLoemoDVJxBzMo8WmdD0PcMllpWJ7CLmfU6NSzA1zaP4lQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\daybo\\Desktop\\Game\\InsaneGame\\InsaneGame.csproj",
+  "projectFilePath": "C:\\Users\\daybo\\Desktop\\Game\\insaneGame\\InsaneGame.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\daybo\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\daybo\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

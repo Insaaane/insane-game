@@ -311,7 +311,6 @@
   <object id="60" x="-0.727273" y="-38.5455" width="3533.17" height="28"/>
   <object id="61" x="-40.6667" y="0.333333" width="26.6667" height="1999.33"/>
   <object id="62" x="3536.67" y="-0.415" width="26.6667" height="1999.33"/>
-  <object id="63" x="1.42109e-14" y="1040.5" width="1898.67" height="28"/>
  </objectgroup>
  <objectgroup id="4" name="EnemyPathways">
   <object id="55" name="1" x="1464.83" y="770.833" width="270.166" height="29"/>

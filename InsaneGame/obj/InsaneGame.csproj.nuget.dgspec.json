@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\daybo\\Desktop\\Game\\InsaneGame\\InsaneGame.csproj": {}
+    "C:\\Users\\daybo\\Desktop\\Game\\insaneGame\\InsaneGame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\daybo\\Desktop\\Game\\InsaneGame\\InsaneGame.csproj": {
+    "C:\\Users\\daybo\\Desktop\\Game\\insaneGame\\InsaneGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\daybo\\Desktop\\Game\\InsaneGame\\InsaneGame.csproj",
+        "projectUniqueName": "C:\\Users\\daybo\\Desktop\\Game\\insaneGame\\InsaneGame.csproj",
         "projectName": "InsaneGame",
-        "projectPath": "C:\\Users\\daybo\\Desktop\\Game\\InsaneGame\\InsaneGame.csproj",
+        "projectPath": "C:\\Users\\daybo\\Desktop\\Game\\insaneGame\\InsaneGame.csproj",
         "packagesPath": "C:\\Users\\daybo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\daybo\\Desktop\\Game\\InsaneGame\\obj\\",
+        "outputPath": "C:\\Users\\daybo\\Desktop\\Game\\insaneGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

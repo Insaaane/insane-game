@@ -76,6 +76,10 @@ namespace InsaneGame.files
                 PlayerAnimationController = CurrentAnimation.Run;
                 Effects = SpriteEffects.None;
             }
+            if (keyboard.IsKeyDown(Keys.S))
+            {
+                Gravity = 7f;
+            }
         }
 
         private void Jump(KeyboardState keyboard)

@@ -177,7 +177,8 @@ namespace InsaneGame.files
                 {
                     player.IsJumping = false;
                     player.Position.Y = initPos.Y;
-                    player.Velocity.Y = initPos.Y; 
+                    player.Velocity.Y = initPos.Y;
+                    player.Gravity = 0;
                     break;
                 }   
             }
@@ -203,8 +204,8 @@ namespace InsaneGame.files
         {
             GraphicsDevice.Clear(Color.LightBlue);
 
-            //_spriteBatch.Begin(transformMatrix: transformMatrix);
-            _spriteBatch.Begin();
+            _spriteBatch.Begin(transformMatrix: transformMatrix);
+            //_spriteBatch.Begin();
 
             tilemapManager.Draw(_spriteBatch);
             #region Enemies

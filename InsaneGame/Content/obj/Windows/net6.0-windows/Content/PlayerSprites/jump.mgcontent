@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/jump.png</SourceFile>
+  <SourceFile>C:/Users/daybo/Desktop/Game/insaneGame/Content/PlayerSprites/jump.png</SourceFile>
   <SourceTime>2023-06-03T02:09:12.3997794+05:00</SourceTime>
-  <DestFile>C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/Content/PlayerSprites/jump.xnb</DestFile>
-  <DestTime>2023-06-03T02:11:04.1453999+05:00</DestTime>
+  <DestFile>C:/Users/daybo/Desktop/Game/insaneGame/Content/bin/Windows/Content/PlayerSprites/jump.xnb</DestFile>
+  <DestTime>2023-06-05T15:52:41.1808846+05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T16:44:56+05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

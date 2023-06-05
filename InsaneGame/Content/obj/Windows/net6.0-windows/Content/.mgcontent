@@ -4,12 +4,12 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/EnemySprites/enemy_run.png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/FireBall/fireBall.png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/idle.png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/jump.png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/run.png</File>
-    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Texture/mapSprites.png</File>
+    <File>C:/Users/daybo/Desktop/Game/insaneGame/Content/EnemySprites/enemy_run.png</File>
+    <File>C:/Users/daybo/Desktop/Game/insaneGame/Content/FireBall/fireBall.png</File>
+    <File>C:/Users/daybo/Desktop/Game/insaneGame/Content/PlayerSprites/idle.png</File>
+    <File>C:/Users/daybo/Desktop/Game/insaneGame/Content/PlayerSprites/jump.png</File>
+    <File>C:/Users/daybo/Desktop/Game/insaneGame/Content/PlayerSprites/run.png</File>
+    <File>C:/Users/daybo/Desktop/Game/insaneGame/Content/Texture/mapSprites.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
