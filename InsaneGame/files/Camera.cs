@@ -1,9 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InsaneGame.files
 {
@@ -11,12 +6,25 @@ namespace InsaneGame.files
     {
         public Matrix Transform;
 
+        private Vector2 position;
+        private Vector2 targetPosition;
+        private float lerpFactor = 0.15f;
+
+        public int MapWidth = 3520;
+        public int MapHeight = 2000;
+
         public Matrix Follow(Rectangle target) 
         {
-            var translation = new Vector3(-target.X - target.Width / 2, -target.Y - target.Height / 2, 0);
-            var offset = new Vector3(Game1.screenWidth / 2, Game1.screenHeight / 2, 0);
+            targetPosition.X = -target.X - target.Width / 2 + Game1.screenWidth / 2;
+            targetPosition.Y = -target.Y - target.Height / 2 + Game1.screenHeight / 2;
 
-            Transform = Matrix.CreateTranslation(translation) * Matrix.CreateTranslation(offset);
+            targetPosition.X = MathHelper.Clamp(targetPosition.X, -MapWidth + Game1.screenWidth, 0);
+            targetPosition.Y = MathHelper.Clamp(targetPosition.Y, -MapHeight + Game1.screenHeight, 0);
+
+            position = Vector2.Lerp(position, targetPosition, lerpFactor);
+
+            Transform = Matrix.CreateTranslation(new Vector3(position, 0));
+
             return Transform;
         }
     }

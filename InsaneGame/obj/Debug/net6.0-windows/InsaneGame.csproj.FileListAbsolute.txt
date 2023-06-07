@@ -45,3 +45,16 @@ C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\PlayerSp
 C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\PlayerSprites\run.xnb
 C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\EnemySprites\enemy_run.xnb
 C:\Users\daybo\Desktop\Game\InsaneGame\bin\Debug\net6.0-windows\Content\FireBall\fireBall.xnb
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Content\FireBall\FB001.xnb
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Content\FireBall\FB002.xnb
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Apos.Gui.dll
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Apos.Input.dll
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Apos.Tweens.dll
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Cyotek.Drawing.BitmapFont.dll
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\FontStashSharp.Base.dll
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\FontStashSharp.MonoGame.dll
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\FontStashSharp.Rasterizers.StbTrueTypeSharp.dll
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\MonoGame.Extended.dll
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\StbImageSharp.dll
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\StbTrueTypeSharp.dll

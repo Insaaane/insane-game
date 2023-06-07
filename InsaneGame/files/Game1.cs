@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using SharpDX.MediaFoundation;
+using System;
 using System.Collections.Generic;
 using TiledSharp;
 
@@ -14,9 +14,13 @@ namespace InsaneGame.files
         public static float screenWidth;
         public static float screenHeight;
 
+        #region Managers
+        private GameManager _gameManager;
+        private TilemapManager tilemapManager;
+        #endregion
+
         #region Tilemap
         private TmxMap map;
-        private TilemapManager tilemapManager;
         private Texture2D tileset;
         private List<Rectangle> collisionRects;
         private Rectangle startRect;
@@ -26,11 +30,15 @@ namespace InsaneGame.files
         #region Player
         private Player player;
         private List<FireBall> fireballs;
-        private Texture2D fireballTexture;
+        private Texture2D fireballTextureR;
+        private Texture2D fireballTextureL;
+        private int time_between_fieballs;
+        private int time_between_hurt = 20;
+        private int points;
         #endregion
 
         #region Emeny
-        private Enemy MainEnemy;
+        private Enemy mainEnemy;
         private List<Enemy> enemyList;
         private List<Rectangle> enemyPathway;
         #endregion
@@ -54,6 +62,7 @@ namespace InsaneGame.files
             _graphics.IsFullScreen = true;
             screenHeight = _graphics.PreferredBackBufferHeight;
             screenWidth = _graphics.PreferredBackBufferWidth;
+            _graphics.SynchronizeWithVerticalRetrace = true;
 
             _graphics.ApplyChanges();
 
@@ -72,8 +81,8 @@ namespace InsaneGame.files
             var tilesetTileWidth = tileset.Width / tileWidth;
 
             tilemapManager = new TilemapManager(map, tileset, tilesetTileWidth, tileWidth, tileHeight);
-            #endregion 
-             
+            #endregion
+
             #region Collision
             collisionRects = new List<Rectangle>();
 
@@ -94,6 +103,8 @@ namespace InsaneGame.files
             }
             #endregion
 
+            _gameManager = new GameManager(endRect);
+
             #region Player
             player = new Player(
                 new Vector2(startRect.X, startRect.Y),
@@ -104,7 +115,12 @@ namespace InsaneGame.files
 
             #region Fireball
             fireballs = new List<FireBall>();
-            fireballTexture = Content.Load<Texture2D>("FireBall\\fireBall");
+            fireballTextureR = Content.Load<Texture2D>("FireBall\\FB001");
+            fireballTextureL = Content.Load<Texture2D>("FireBall\\FB002");
+            #endregion
+
+            #region Camera 
+            camera = new Camera();
             #endregion
 
             #region Enemy
@@ -117,17 +133,13 @@ namespace InsaneGame.files
             enemyList = new List<Enemy>();
 
 
-            for (var i  = 0; i < enemyPathway.Count; i++)
+            for (var i = 0; i < enemyPathway.Count; i++)
             {
-                MainEnemy = new Enemy(
+                mainEnemy = new Enemy(
                 Content.Load<Texture2D>("EnemySprites\\enemy_run"),
                 enemyPathway[i]);
-                enemyList.Add(MainEnemy);
+                enemyList.Add(mainEnemy);
             }
-            #endregion
-
-            #region Camera 
-            camera = new Camera();
             #endregion
         }
 
@@ -137,9 +149,19 @@ namespace InsaneGame.files
                 Exit();
 
             #region Enemies
-            foreach(var enemy in enemyList)
+            foreach (var enemy in enemyList)
             {
                 enemy.Update();
+                if (enemy.HasHit(player.Hitbox))
+                {
+                    player.HitCounter++;
+                    if (player.HitCounter > time_between_hurt)
+                    {
+                        player.Health--;
+                        player.HitCounter = 0;
+                    }
+                }
+
             }
             #endregion
 
@@ -147,22 +169,69 @@ namespace InsaneGame.files
             transformMatrix = camera.Follow(player.Hitbox);
             #endregion
 
+            #region Managers
+            if (_gameManager.HasGameEnded(player.Hitbox))
+            {
+                Console.WriteLine("Game Ended");
+            }
+            if (player.Health <= 0)
+            {
+                Console.WriteLine("GameOVER");
+            }
+            Console.WriteLine($"Health = {player.Health}");
+            #endregion
+
             #region Player
 
-            #region FireballTexture
-            
-            if (player.IsShoting)
+            #region Fireball
+
+            if (player.IsShooting)
             {
-                if (player.Effects == SpriteEffects.None)
+                if (time_between_fieballs > 5 && fireballs.ToArray().Length < 20)
                 {
-                    var temp_hitbox = new Rectangle((int)player.Position.X, (int)player.Position.Y, fireballTexture.Width, fireballTexture.Height);
-                    fireballs.Add(new FireBall(fireballTexture, 4, temp_hitbox));
+                    var temp_hitbox_R = new Rectangle((int)player.Position.X + 40, 
+                        (int)player.Position.Y + 30, fireballTextureR.Width, fireballTextureR.Height);
+                    var temp_hitbox_L = new Rectangle((int)player.Position.X, 
+                        (int)player.Position.Y + 30, fireballTextureL.Width, fireballTextureL.Height);
+
+                    if (player.Effects == SpriteEffects.None)
+                    {
+                        fireballs.Add(new FireBall(fireballTextureR, 7, temp_hitbox_R));
+                    }
+                    if (player.Effects == SpriteEffects.FlipHorizontally)
+                    {
+                        fireballs.Add(new FireBall(fireballTextureL, -7, temp_hitbox_L));
+                    }
+                    time_between_fieballs = 0;
+                }
+                else 
+                {
+                    time_between_fieballs++;
                 }
             }
 
             foreach (var fireball in fireballs.ToArray())
             {
+                fireball.Update();
 
+                foreach (var rect in collisionRects)
+                {
+                    if (rect.Intersects(fireball.hitbox))
+                    {
+                        fireballs.Remove(fireball);
+                        break; 
+                    }
+                }
+                foreach (var enemy in enemyList.ToArray())
+                {
+                    if (fireball.hitbox.Intersects(enemy.Hitbox))
+                    {
+                        fireballs.Remove(fireball);
+                        enemyList.Remove(enemy);
+                        points++;
+                        break;
+                    }
+                }
             }
 
             #endregion
@@ -178,9 +247,10 @@ namespace InsaneGame.files
                     player.IsJumping = false;
                     player.Position.Y = initPos.Y;
                     player.Velocity.Y = initPos.Y;
-                    player.Gravity = 0;
+                    //player.Gravity = 0;
+                    player.CountOfJumps = 0;
                     break;
-                }   
+                }
             }
 
             //x axis
@@ -202,12 +272,12 @@ namespace InsaneGame.files
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.LightBlue);
+            GraphicsDevice.Clear(Color.SkyBlue);
 
             _spriteBatch.Begin(transformMatrix: transformMatrix);
-            //_spriteBatch.Begin();
 
             tilemapManager.Draw(_spriteBatch);
+
             #region Enemies
             foreach (var enemy in enemyList)
             {
@@ -215,10 +285,7 @@ namespace InsaneGame.files
             }
             #endregion
 
-            #region Player
-            player.Draw(_spriteBatch, gameTime);
-
-            #region Bullet
+            #region FireBall
 
             foreach (var fireball in fireballs.ToArray())
             {
@@ -227,7 +294,12 @@ namespace InsaneGame.files
 
             #endregion
 
+            #region Player
+
+            player.Draw(_spriteBatch, gameTime);
+
             #endregion
+
             _spriteBatch.End();
 
             base.Draw(gameTime);

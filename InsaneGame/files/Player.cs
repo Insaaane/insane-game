@@ -16,8 +16,14 @@ namespace InsaneGame.files
         public float JumpSpeed = -23f;
         public float StartY;
 
+        public int Health = 10;
+        public int HitCounter = 0;
+
+
+        public int CountOfJumps = 0;
+
         public bool IsJumping;
-        public bool IsShoting;
+        public bool IsShooting;
 
         public Animation[] PlayerAmination;
         public CurrentAnimation PlayerAnimationController;
@@ -34,19 +40,20 @@ namespace InsaneGame.files
             PlayerAmination[1] = new Animation(runSprite);
             PlayerAmination[2] = new Animation(jumpSprite);
 
-            Hitbox = new Rectangle((int)Position.X, (int)Position.Y, 96, 85);
-            PlayerFallRect = new Rectangle((int)Position.X, (int)Position.Y, 96, 85);
+            Hitbox = new Rectangle((int)Position.X, (int)Position.Y, 96, 87);
+            PlayerFallRect = new Rectangle((int)Position.X, (int)Position.Y, 96, 87);
         }
 
         public override void Update()
         {
             var keyboard = Keyboard.GetState();
+            var mouse = Mouse.GetState();
 
             PlayerAnimationController = CurrentAnimation.Idle;
 
             Position = Velocity;
 
-            IsShoting = keyboard.IsKeyDown(Keys.Enter);
+            IsShooting = Equals(mouse.LeftButton, ButtonState.Pressed);
 
             StartY = Position.Y;
 
@@ -99,9 +106,10 @@ namespace InsaneGame.files
             }
             else
             {
-                if ((keyboard.IsKeyDown(Keys.Space) || keyboard.IsKeyDown(Keys.W)) && !IsJumping)
+                if ((keyboard.IsKeyDown(Keys.Space) || keyboard.IsKeyDown(Keys.W)) && CountOfJumps < 2)
                 {
                     IsJumping = true;
+                    CountOfJumps += 1;
                     JumpSpeed = -23f;
                 }
             }
@@ -120,7 +128,7 @@ namespace InsaneGame.files
                 case CurrentAnimation.Jump:
                     PlayerAmination[2].Draw(spriteBatch, Position, gameTime, 100, Effects);
                     break;
-            }    
+            }
         }
     }
 }
