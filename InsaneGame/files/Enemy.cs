@@ -45,7 +45,7 @@ namespace InsaneGame.files
             if (isFacingRight)
                 enemyAnim.Draw(spriteBatch, Position, gameTime, 80, SpriteEffects.FlipHorizontally);
             else
-                enemyAnim.Draw(spriteBatch, Position, gameTime, 80);
+                enemyAnim.Draw(spriteBatch, Position, gameTime);
         }
     }
 }

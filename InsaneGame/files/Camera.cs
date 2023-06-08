@@ -15,11 +15,11 @@ namespace InsaneGame.files
 
         public Matrix Follow(Rectangle target) 
         {
-            targetPosition.X = -target.X - target.Width / 2 + Game1.screenWidth / 2;
-            targetPosition.Y = -target.Y - target.Height / 2 + Game1.screenHeight / 2;
+            targetPosition.X = -target.X - target.Width / 2 + Main.screenWidth / 2;
+            targetPosition.Y = -target.Y - target.Height / 2 + Main.screenHeight / 2;
 
-            targetPosition.X = MathHelper.Clamp(targetPosition.X, -MapWidth + Game1.screenWidth, 0);
-            targetPosition.Y = MathHelper.Clamp(targetPosition.Y, -MapHeight + Game1.screenHeight, 0);
+            targetPosition.X = MathHelper.Clamp(targetPosition.X, -MapWidth + Main.screenWidth, 0);
+            targetPosition.Y = MathHelper.Clamp(targetPosition.Y, -MapHeight + Main.screenHeight, 0);
 
             position = Vector2.Lerp(position, targetPosition, lerpFactor);
 

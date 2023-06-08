@@ -1,3 +1,3 @@
 ﻿
-using var game = new InsaneGame.files.Game1();
+using var game = new InsaneGame.files.Main();
 game.Run();

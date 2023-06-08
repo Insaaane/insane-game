@@ -6,16 +6,21 @@ namespace InsaneGame.files
 {
     public class GameManager
     {
-        private Rectangle endRectangle;
+        private Rectangle rect;
 
         public GameManager(Rectangle endRectangle)
         {
-            this.endRectangle = endRectangle;
+            this.rect = endRectangle;
         }
 
         public bool HasGameEnded(Rectangle playerHitbox)
         {
-            return endRectangle.Intersects(playerHitbox);
+            return rect.Intersects(playerHitbox);
+        }
+
+        public bool PlayerIsDead(Rectangle playerHitbox)
+        {
+            return rect.Intersects(playerHitbox);
         }
     }
 }

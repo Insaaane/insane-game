@@ -47,7 +47,7 @@
           "dependencies": {
             "Apos.Gui": {
               "target": "Package",
-              "version": "[2.0.0, )"
+              "version": "[1.0.8, )"
             },
             "MonoGame.Content.Builder.Task": {
               "target": "Package",

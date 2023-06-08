@@ -16,7 +16,7 @@ namespace InsaneGame.files
         public float JumpSpeed = -23f;
         public float StartY;
 
-        public int Health = 10;
+        public int Health = 5;
         public int HitCounter = 0;
 
 

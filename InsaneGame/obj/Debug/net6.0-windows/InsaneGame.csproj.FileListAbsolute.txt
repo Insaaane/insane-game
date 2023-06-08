@@ -51,10 +51,11 @@ C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Apos.Gui.dll
 C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Apos.Input.dll
 C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Apos.Tweens.dll
 C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Cyotek.Drawing.BitmapFont.dll
-C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\FontStashSharp.Base.dll
 C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\FontStashSharp.MonoGame.dll
-C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\FontStashSharp.Rasterizers.StbTrueTypeSharp.dll
 C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\MonoGame.Extended.dll
 C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\StbImageSharp.dll
 C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\StbTrueTypeSharp.dll
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Content\Level2.tmx
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Content\PixelFont.ttf
+C:\Users\daybo\Desktop\Game\insaneGame\bin\Debug\net6.0-windows\Content\Coins\Coin.xnb

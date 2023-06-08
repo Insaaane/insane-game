@@ -13,6 +13,18 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Coins/Coin.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Coins/Coin.png
+
 #begin EnemySprites/enemy_run.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -63,6 +75,9 @@
 
 #begin Level.tmx
 /copy:Level.tmx
+
+#begin PixelFont.ttf
+/copy:PixelFont.ttf
 
 #begin PlayerSprites/idle.png
 /importer:TextureImporter

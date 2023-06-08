@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Coins/Coin.png</File>
     <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/EnemySprites/enemy_run.png</File>
     <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/FireBall/FB001.png</File>
     <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/FireBall/FB002.png</File>
@@ -14,6 +15,7 @@
     <File>C:/Users/daybo/Desktop/Game/InsaneGame/Content/Texture/mapSprites.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
