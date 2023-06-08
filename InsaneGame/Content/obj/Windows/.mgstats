@@ -1,12 +1,11 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/daybo/Desktop/Game/InsaneGame/Content/Coins/Coin.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/Coins/Coin.xnb","TextureProcessor","Texture2DContent",576,16469,0,0922995
-"C:/Users/daybo/Desktop/Game/InsaneGame/Content/EnemySprites/enemy_run.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/EnemySprites/enemy_run.xnb","TextureProcessor","Texture2DContent",13560,442453,0,0110311
-"C:/Users/daybo/Desktop/Game/InsaneGame/Content/FireBall/FB001.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/FireBall/FB001.xnb","TextureProcessor","Texture2DContent",252,8277,0,0014438
-"C:/Users/daybo/Desktop/Game/InsaneGame/Content/FireBall/FB002.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/FireBall/FB002.xnb","TextureProcessor","Texture2DContent",230,8277,0,0011903
-"C:/Users/daybo/Desktop/Game/InsaneGame/Content/FireBall/fireBall.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/FireBall/fireBall.xnb","TextureProcessor","Texture2DContent",1177,41045,0,0016859
-"C:/Users/daybo/Desktop/Game/InsaneGame/Content/Level.tmx","C:\Users\daybo\Desktop\Game\InsaneGame\Content\bin\Windows\Level.tmx","CopyItem","File",164730,164730,0,0010776
-"C:/Users/daybo/Desktop/Game/InsaneGame/Content/PixelFont.ttf","C:\Users\daybo\Desktop\Game\InsaneGame\Content\bin\Windows\PixelFont.ttf","CopyItem","File",443680,443680,0,0007068
-"C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/idle.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/PlayerSprites/idle.xnb","TextureProcessor","Texture2DContent",5897,221269,0,0058982
-"C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/jump.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/PlayerSprites/jump.xnb","TextureProcessor","Texture2DContent",3415,73813,0,0026028
-"C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/run.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/PlayerSprites/run.xnb","TextureProcessor","Texture2DContent",9290,294997,0,0064562
-"C:/Users/daybo/Desktop/Game/InsaneGame/Content/Texture/mapSprites.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/Texture/mapSprites.xnb","TextureProcessor","Texture2DContent",334342,2097237,0,0384161
+"C:/Users/daybo/Desktop/Game/InsaneGame/Content/Coins/Coin.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/Coins/Coin.xnb","TextureProcessor","Texture2DContent",576,16469,0,0935928
+"C:/Users/daybo/Desktop/Game/InsaneGame/Content/EnemySprites/enemy_run.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/EnemySprites/enemy_run.xnb","TextureProcessor","Texture2DContent",13560,442453,0,0117187
+"C:/Users/daybo/Desktop/Game/InsaneGame/Content/FireBall/FB001.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/FireBall/FB001.xnb","TextureProcessor","Texture2DContent",252,8277,0,0017801
+"C:/Users/daybo/Desktop/Game/InsaneGame/Content/FireBall/FB002.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/FireBall/FB002.xnb","TextureProcessor","Texture2DContent",230,8277,0,001566
+"C:/Users/daybo/Desktop/Game/InsaneGame/Content/Level.tmx","C:\Users\daybo\Desktop\Game\InsaneGame\Content\bin\Windows\Level.tmx","CopyItem","File",167508,167508,0,0009837
+"C:/Users/daybo/Desktop/Game/InsaneGame/Content/PixelFont.ttf","C:\Users\daybo\Desktop\Game\InsaneGame\Content\bin\Windows\PixelFont.ttf","CopyItem","File",443680,443680,0,0005561
+"C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/idle.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/PlayerSprites/idle.xnb","TextureProcessor","Texture2DContent",5897,221269,0,0057157
+"C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/jump.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/PlayerSprites/jump.xnb","TextureProcessor","Texture2DContent",3415,73813,0,002449
+"C:/Users/daybo/Desktop/Game/InsaneGame/Content/PlayerSprites/run.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/PlayerSprites/run.xnb","TextureProcessor","Texture2DContent",9290,294997,0,0067831
+"C:/Users/daybo/Desktop/Game/InsaneGame/Content/Texture/mapSprites.png","C:/Users/daybo/Desktop/Game/InsaneGame/Content/bin/Windows/Texture/mapSprites.xnb","TextureProcessor","Texture2DContent",334342,2097237,0,037045

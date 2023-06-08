@@ -1,7 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿using InsaneGame.files;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-namespace InsaneGame.files
+namespace InsaneGame.Controllers
 {
     public class Coin
     {
@@ -16,7 +17,7 @@ namespace InsaneGame.files
 
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            coinAnim.Draw(spriteBatch, new Vector2(rect.X, rect.Y),gameTime);
+            coinAnim.Draw(spriteBatch, new Vector2(rect.X, rect.Y), gameTime);
         }
     }
 }
